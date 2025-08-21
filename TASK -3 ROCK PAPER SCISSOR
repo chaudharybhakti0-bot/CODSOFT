@@ -1,0 +1,25 @@
+import random 
+print("Welcome to Game")
+def game():
+    print("Please choose one of the following\nRock\nPaper\nScissor")
+    a=["Rock","Paper","Scissor"]
+    user=input("Enter your choice")
+    computer=random.choice(a)
+    if (user==computer):
+        print("DRAW! user",user,"computer",computer)
+    elif(user=="Rock" and computer =="Paper")or\
+    (user=="Paper" and computer =="Scissor")or\
+    (user=="Scissor" and computer=="Rock"):
+        print("YOU WIN! user",user,"computer",computer)
+    else:
+        print("YOU LOSE! user",user,"computer",computer)
+while True:
+    print("Do you want to play?")
+    b=input("Press y for yes\nPress n for no")
+    if (b in ["y","Y"]):
+        game()
+    elif(b in ["N","n"]):
+        print("Thank you")
+        break
+    else:
+        print("Enter valid choice")
