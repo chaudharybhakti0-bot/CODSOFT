@@ -1,0 +1,35 @@
+print("Hello")
+def calculate():
+    a=int(input("Enter 1st number"))
+    b=int(input("Enter 2nd number"))
+    print("""Press 1 for addition
+    Press 2 for subtraction 
+    Press 3 for multiplication 
+    Press 4 for division""")
+    c=int(input("Enter your choice"))
+    match c:
+        case 1:
+            print("The answer is:",a+b)
+        case 2:
+            print("The answer is:",a-b)
+        case 3:
+            print("The answer is:",a*b)
+        case 4:
+            if (b==0):
+                print("ERROR")
+            else:
+                print("The answer is:",a/b)
+        case _:
+            print("Enter valid choice")
+while True:
+    print("""Do u want to use a calculator
+    Press y for yes 
+    Press n for no""")
+    choice=input("Enter your choice")
+    if (choice in ["Y","y"]):
+        calculate()
+    elif (choice in ["N", "n"]):
+        print("Thank you")
+        break
+    else:
+        print("Enter valid choice")
