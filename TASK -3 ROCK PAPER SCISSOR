@@ -1,25 +1,32 @@
-import random 
+import random
 print("Welcome to Game")
+computerscore=0
+userscore=0
 def game():
-    print("Please choose one of the following\nRock\nPaper\nScissor")
+    global computerscore,userscore
+    print("Please select one of the following\nRock\nPaper\nScissor")
     a=["Rock","Paper","Scissor"]
-    user=input("Enter your choice")
     computer=random.choice(a)
-    if (user==computer):
-        print("DRAW! user",user,"computer",computer)
-    elif(user=="Rock" and computer =="Paper")or\
-    (user=="Paper" and computer =="Scissor")or\
+    user=input("Enter your choice")
+    if(user==computer):
+        print("DRAW! USER",user,"COMPUTER",computer)
+    elif(user=="Rock" and computer =="Paper") or\
+    (user=="Paper" and computer=="Scissor") or\
     (user=="Scissor" and computer=="Rock"):
-        print("YOU WIN! user",user,"computer",computer)
-    else:
-        print("YOU LOSE! user",user,"computer",computer)
+        print("YOU LOSE! USER",user,"COMPUTER",computer)
+        computerscore+=1
+    else :
+        print("YOU WIN! USER ",user,"COMPUTER",computer)
+        userscore+=1
 while True:
-    print("Do you want to play?")
-    b=input("Press y for yes\nPress n for no")
-    if (b in ["y","Y"]):
+    print("Do u want to play?")
+    choice=input("Press y for yes Press n for no")
+    if (choice in ["Y","y"]):
         game()
-    elif(b in ["N","n"]):
-        print("Thank you")
+    elif(choice in ["N","n"]):
+        print("Thank Your")
+        print("USER",userscore)
+        print("COMPUTER",computerscore)
         break
-    else:
+    else :
         print("Enter valid choice")
